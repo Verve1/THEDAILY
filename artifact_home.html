@@ -1,0 +1,323 @@
+<title>THE DAILY — thisweek.fin</title>
+<style>/* THE DAILY — editorial styles. Green/black/off-white. Typography-first. */
+
+:root{
+  --green: #00C76B;
+  --green-dim: #0a3d24;
+  --black: #0a0a0a;
+  --ink: #141414;
+  --paper: #f7f4ec;
+  --paper-dim: #efeade;
+  --rule: #1f1f1f;
+  --rule-light: #d9d3c2;
+  --gray: #5c584c;
+  --serif: Georgia, 'Times New Roman', Times, serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'SF Mono', 'Courier New', monospace;
+}
+
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  line-height:1.4;
+}
+a{color:inherit;text-decoration:none;}
+a.src-link{color:var(--green-dim);text-decoration:underline;text-underline-offset:2px;}
+img{max-width:100%;display:block;}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px;}
+
+/* MASTHEAD */
+.masthead{
+  background:var(--black);
+  color:var(--paper);
+  padding:18px 0 14px;
+}
+.masthead-row{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand img{width:38px;height:38px;}
+.brand-text{display:flex;flex-direction:column;line-height:1.05;}
+.brand-title{font-family:var(--sans);font-weight:800;font-size:22px;letter-spacing:2px;}
+.brand-sub{font-family:var(--sans);font-size:10px;letter-spacing:2.5px;color:var(--green);margin-top:3px;}
+.masthead-meta{font-family:var(--sans);font-size:12px;letter-spacing:1px;color:#b9b6ab;text-align:right;}
+.masthead-meta .date{color:var(--paper);font-weight:600;}
+.nav{font-family:var(--sans);font-size:11px;letter-spacing:1.5px;margin-top:14px;display:flex;gap:22px;border-top:1px solid #2a2a2a;padding-top:12px;}
+.nav a{color:#cfccc2;}
+.nav a.active,.nav a:hover{color:var(--green);}
+.rule-green{height:3px;background:var(--green);}
+
+/* TOP 3 */
+.top3{
+  display:grid;
+  grid-template-columns:1fr 1.6fr 1fr;
+  gap:0;
+  border-bottom:1px solid var(--rule);
+}
+.top3 > div{padding:26px 22px;}
+.top3 .side{border-top:1px solid var(--rule-light);}
+.top3 .side:first-child{border-right:1px solid var(--rule-light);}
+.top3 .side:last-child{border-left:1px solid var(--rule-light);margin-left:-1px;}
+.top3 .center{border-top:3px solid var(--green);background:var(--paper);}
+.eyebrow{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:2px;color:var(--green-dim);margin-bottom:10px;}
+.top3 .side .eyebrow{color:var(--gray);}
+h1.headline{font-size:22px;line-height:1.18;margin:0 0 10px;font-weight:700;}
+h1.headline.big{font-size:34px;line-height:1.12;}
+.dek{font-size:15px;color:#333;margin:0 0 12px;}
+.why{font-family:var(--sans);font-size:11px;letter-spacing:0.5px;color:var(--gray);text-transform:uppercase;margin:14px 0 4px;font-weight:700;}
+.why-text{font-family:var(--sans);font-size:13.5px;color:#2a2a2a;margin:0 0 12px;line-height:1.5;}
+.keynum{display:flex;align-items:baseline;gap:10px;margin:14px 0;padding:10px 0;border-top:1px dashed var(--rule-light);}
+.keynum .num{font-family:var(--sans);font-weight:800;font-size:26px;color:var(--green-dim);}
+.keynum .lbl{font-family:var(--sans);font-size:11.5px;color:var(--gray);}
+.srcline{font-family:var(--sans);font-size:11px;color:var(--gray);margin-top:8px;}
+
+/* SECTIONS */
+section.sec{padding:34px 0;border-bottom:1px solid var(--rule-light);}
+.sec-title{font-family:var(--sans);font-size:13px;font-weight:800;letter-spacing:3px;color:var(--black);border-bottom:2px solid var(--black);padding-bottom:8px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:baseline;}
+.sec-title span.tag{font-size:10px;color:var(--green-dim);letter-spacing:1.5px;}
+.story-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 32px;}
+.story{padding-bottom:0;}
+.story h3{font-size:16.5px;margin:0 0 6px;line-height:1.28;font-weight:700;}
+.story p{font-family:var(--sans);font-size:13.5px;color:#2c2c2c;margin:0 0 8px;line-height:1.55;}
+.story .kn{font-family:var(--sans);font-weight:800;color:var(--green-dim);font-size:14px;}
+.story .src{font-family:var(--sans);font-size:11px;color:var(--gray);}
+
+/* MARKETS TABLE */
+.mkt-note{font-family:var(--sans);font-size:11px;color:var(--gray);margin:-8px 0 18px;}
+.mkt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule-light);margin-bottom:22px;}
+.mkt-cell{border-right:1px solid var(--rule-light);border-bottom:1px solid var(--rule-light);padding:14px 14px;font-family:var(--sans);}
+.mkt-cell .lbl{font-size:10.5px;letter-spacing:1.5px;color:var(--gray);text-transform:uppercase;}
+.mkt-cell .val{font-size:19px;font-weight:800;margin-top:4px;}
+.mkt-cell .chg{font-size:12px;margin-top:2px;font-weight:700;}
+.chg.up{color:#0a7d3f;}
+.chg.down{color:#b3311c;}
+
+/* WHAT TO WATCH */
+.watch .story h3::before{content:"DEVELOPING — ";color:var(--green-dim);font-family:var(--sans);font-size:10.5px;letter-spacing:1px;display:block;margin-bottom:4px;}
+
+/* FOOTER */
+footer{background:var(--black);color:#b9b6ab;padding:30px 0 40px;font-family:var(--sans);}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+footer a{color:var(--green);}
+footer .fbrand{font-weight:800;letter-spacing:2px;color:var(--paper);}
+footer .disclaimer{font-size:11px;color:#8a8778;max-width:640px;line-height:1.6;margin-top:14px;}
+
+/* ARCHIVE */
+.archive-month{margin-bottom:30px;}
+.archive-month h2{font-family:var(--sans);font-size:14px;letter-spacing:3px;border-bottom:2px solid var(--black);padding-bottom:8px;}
+.archive-list{list-style:none;margin:0;padding:0;}
+.archive-list li{border-bottom:1px solid var(--rule-light);padding:14px 0;display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);}
+.archive-list a{font-size:15px;font-weight:600;}
+.archive-list a:hover{color:var(--green-dim);}
+.archive-list .top-headline{font-size:12px;color:var(--gray);font-family:var(--serif);font-style:italic;}
+
+/* MOBILE */
+@media (max-width:860px){
+  .top3{grid-template-columns:1fr;}
+  .top3 .center{order:-1;border-top:3px solid var(--green);}
+  .top3 .side:first-child{border-right:none;}
+  .top3 .side:last-child{border-left:none;margin-left:0;}
+  .top3 .side{border-top:1px solid var(--rule-light);}
+  h1.headline.big{font-size:26px;}
+  .story-grid{grid-template-columns:1fr;}
+  .mkt-grid{grid-template-columns:repeat(2,1fr);}
+  .masthead-row{align-items:flex-start;}
+  .masthead-meta{text-align:left;}
+  footer .wrap{flex-direction:column;}
+}
+</style>
+
+<div class="masthead" >
+  <div class="wrap">
+    <div class="masthead-row">
+      <div class="brand">
+        <img src="data:image/png;base64,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" alt="logo">
+        <div class="brand-text">
+          <div class="brand-title">THE DAILY</div>
+          <div class="brand-sub">THISWEEK.FIN</div>
+        </div>
+      </div>
+      <div class="masthead-meta">BUSINESS &amp; FINANCE, DAILY<br><span class="date">SATURDAY, AUGUST 29, 2026</span></div>
+    </div>
+    <div class="nav">
+      <a href="#">LATEST</a>
+      <a href="https://claude.ai/code/artifact/f695bee6-2fb9-4e15-aa45-cb03a033cda5">ARCHIVE</a>
+    </div>
+  </div>
+</div>
+<div class="rule-green"></div>
+<div class="wrap">
+  <div class="top3">
+  <div class="side">
+    <div class="eyebrow">#2</div>
+    <h1 class="headline">NVIDIA IS TURNING AI DEMAND INTO A FINANCIAL FLYWHEEL</h1>
+    <p class="dek">Nvidia posted Q2 revenue of $96.22B, topped EPS estimates ($2.22 vs. $2.09 expected), and guided to roughly 70% revenue growth into fiscal 2028. Shares surged 8.7% and dragged the Nasdaq up 1.6% on the day.</p>
+    <div class="why">Why it matters</div><p class="why-text">Nvidia is now the single biggest swing factor in US equity indices. When it beats big, it doesn't just move its own stock — it resets the market's entire AI-capex thesis for the next two quarters.</p>
+    <div class="keynum"><span class="num">$96.22B</span><span class="lbl">Q2 revenue, a company record</span></div>
+    <span class="srcline">Source: <a class="src-link" href="https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-28-133400922.html" target="_blank" rel="noopener">Yahoo Finance</a></span>
+  </div>
+  <div class="center">
+    <div class="eyebrow">TOP STORY</div>
+    <h1 class="headline big">THE FED JUST GOT A NEW PROBLEM</h1>
+    <p class="dek">New Fed Chair Kevin Warsh used his first Jackson Hole address, on August 28, to warn that inflation isn't beaten — saying the central bank "has more work to do" and signaling that further rate hikes, not the cuts markets had priced in, are back on the table.</p>
+    <div class="why">Why it matters</div><p class="why-text">Markets spent the summer betting on a September cut. A hawkish pivot from a brand-new Fed chair — sworn in just three months ago — changes the calculus for stocks, bonds, and the dollar heading into the next FOMC meeting, and tests how much credibility a new chair wants to spend on an inflation fight investors thought was over.</p>
+    <div class="keynum"><span class="num">$4,608</span><span class="lbl">gold price per ounce, a record high, as investors hedge the inflation risk</span></div>
+    <span class="srcline">Source: <a class="src-link" href="https://www.washingtonpost.com/business/2026/08/28/fed-chair-warsh-speaks-jackson-hole-conference/" target="_blank" rel="noopener">Washington Post</a> &middot; <a class="src-link" href="https://www.cnbc.com/2026/08/28/kevin-warsh-jackson-hole-fed-inflation-rate-hike.html" target="_blank" rel="noopener">CNBC</a></span>
+  </div>
+  <div class="side">
+    <div class="eyebrow">#3</div>
+    <h1 class="headline">SALESFORCE'S AI BET STARTS PAYING OFF — WITH ANTHROPIC ALONG FOR THE RIDE</h1>
+    <p class="dek">Salesforce shares jumped 22.6% — its best single-day move in years — after posting EPS of $5.90 against a $3.27 estimate and revenue of $11.35B. Executives credited accelerating Agentforce adoption, and the company launched a new "Claudeforce" AI plugin built with Anthropic.</p>
+    <div class="why">Why it matters</div><p class="why-text">This is one of the first big enterprise-software earnings beats that management explicitly attributes to AI agents actually selling and closing work, not just powering demos — a data point the market has been waiting for.</p>
+    <div class="keynum"><span class="num">+22.6%</span><span class="lbl">single-day stock move, Salesforce's largest in years</span></div>
+    <span class="srcline">Source: <a class="src-link" href="https://www.investing.com/news/transcripts/earnings-call-transcript-salesforce-tops-q2-2026-profit-forecasts-shares-jump-93CH-4878056" target="_blank" rel="noopener">Investing.com</a> &middot; <a class="src-link" href="https://www.cnbc.com/2026/08/26/salesforce-crm-q2-earnings-report-2027.html" target="_blank" rel="noopener">CNBC</a></span>
+  </div>
+  </div>
+  <section class="sec">
+    <div class="sec-title">BUSINESS</div>
+    <div class="story-grid">
+    <div class="story">
+      <h3>US M&amp;A ACTIVITY IS RUNNING HOT INTO THE SECOND HALF</h3>
+      <p>US merger and acquisition deal value hit $1.11 trillion in the first half of 2026, a pace that puts dealmakers on track for one of the busier years since the 2021 boom.</p>
+      
+      <div class="src"><span class="srcline">Source: <a class="src-link" href="https://rbj.net/2026/08/25/us-merger-acquisition-deal-value-1-11-trillion-tax-planning/" target="_blank" rel="noopener">Rochester Business Journal</a></span></div>
+    </div>
+    <div class="story">
+      <h3>THE LABOR MARKET ISN'T CRACKING — YET</h3>
+      <p>Weekly jobless claims came in at 203,000 for the week ending August 22, down 4,000 from the prior week, giving the Fed one less reason to rush toward cuts.</p>
+      <div class="kn">203,000</div>
+      <div class="src"><span class="srcline">Source: <a class="src-link" href="https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-28-133400922.html" target="_blank" rel="noopener">Yahoo Finance</a></span></div>
+    </div>
+    <div class="story">
+      <h3>VOLATILITY IS DRAINING OUT OF THE MARKET</h3>
+      <p>The VIX fell 4.6% to 14.51 on Thursday, its calmest reading in weeks, even as investors braced for Warsh's Friday remarks.</p>
+      <div class="kn">14.51</div>
+      <div class="src"><span class="srcline">Source: <a class="src-link" href="https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-28-133400922.html" target="_blank" rel="noopener">Yahoo Finance</a></span></div>
+    </div>
+    <div class="story">
+      <h3>CHIPMAKERS RODE NVIDIA'S COATTAILS</h3>
+      <p>Broadcom (+4.5%) and Intel (+4.4%) both rallied alongside Nvidia as the semiconductor sector benefited from renewed confidence in AI capex.</p>
+      
+      <div class="src"><span class="srcline">Source: <a class="src-link" href="https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-28-133400922.html" target="_blank" rel="noopener">Yahoo Finance</a></span></div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-title">MARKETS <span class="tag">SNAPSHOT</span></div>
+    <div class="mkt-note">Levels reflect Friday, August 28 close / early Saturday reads where markets are closed for the weekend.</div>
+    <div class="mkt-grid">
+    <div class="mkt-cell">
+      <div class="lbl">S&amp;P 500</div>
+      <div class="val">7,730.99</div>
+      <div class="chg up">+0.7%</div>
+    </div>
+    <div class="mkt-cell">
+      <div class="lbl">Nasdaq</div>
+      <div class="val">26,541.35</div>
+      <div class="chg up">+1.6%</div>
+    </div>
+    <div class="mkt-cell">
+      <div class="lbl">Dow Jones</div>
+      <div class="val">53,569.44</div>
+      <div class="chg up">+0.2%</div>
+    </div>
+    <div class="mkt-cell">
+      <div class="lbl">VIX</div>
+      <div class="val">14.51</div>
+      <div class="chg down">-4.6%</div>
+    </div>
+    <div class="mkt-cell">
+      <div class="lbl">Brent Crude Oil</div>
+      <div class="val">$90.55/bbl</div>
+      <div class="chg up">+$0.87</div>
+    </div>
+    <div class="mkt-cell">
+      <div class="lbl">Gold</div>
+      <div class="val">$4,608/oz</div>
+      <div class="chg up">+$19 (record)</div>
+    </div>
+    <div class="mkt-cell">
+      <div class="lbl">Bitcoin</div>
+      <div class="val">$79,132.61</div>
+      <div class="chg down">-$574.57</div>
+    </div></div>
+    <div class="story-grid">
+    <div class="story">
+      <h3>TECH CARRIED THE TAPE</h3>
+      <p>The Technology Select Sector SPDR (XLK) jumped 3.2% Thursday — the only S&amp;P sector to advance — as the Nvidia and Salesforce beats overwhelmed everything else in the index.</p>
+      
+      <div class="src"><span class="srcline">Source: <a class="src-link" href="https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-28-133400922.html" target="_blank" rel="noopener">Yahoo Finance</a></span></div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-title">TECHNOLOGY & AI</div>
+    <div class="story-grid">
+    <div class="story">
+      <h3>NVIDIA'S GUIDANCE IS THE REAL STORY, NOT THE BEAT</h3>
+      <p>Beyond the Q2 numbers, Nvidia's ~70% revenue growth guidance for fiscal 2028 is the market's clearest signal yet that AI infrastructure spending isn't slowing down through the decade.</p>
+      
+      <div class="src"><span class="srcline">Source: <a class="src-link" href="https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-28-133400922.html" target="_blank" rel="noopener">Yahoo Finance</a></span></div>
+    </div>
+    <div class="story">
+      <h3>SALESFORCE AND ANTHROPIC TEAM UP ON "CLAUDEFORCE"</h3>
+      <p>Salesforce's new Claudeforce plugin, built with Anthropic, is a bet that enterprise AI agents need a foundation-model partner rather than a purely in-house model stack.</p>
+      
+      <div class="src"><span class="srcline">Source: <a class="src-link" href="https://qz.com/salesforce-earnings-claudeforce-anthropic-ai-plugin-082726" target="_blank" rel="noopener">Quartz</a></span></div>
+    </div>
+    <div class="story">
+      <h3>AI STARTUP FUNDING KEEPS FLOWING DESPITE STRETCHED VALUATIONS</h3>
+      <p>Fresh rounds this week for AI and robotics startups including Emerald AI, Gatik, and Stellaria point to investors still backing AI infrastructure and applied-AI plays even as public-market AI valuations draw more scrutiny.</p>
+      
+      <div class="src"><span class="srcline">Source: <a class="src-link" href="https://techstartups.com/2026/08/26/startup-funding-news-today-august-26-2026-emerald-ai-gatik-stellaria-more/" target="_blank" rel="noopener">TechStartups</a></span></div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-title">COMPANIES</div>
+    <div class="story-grid">
+    <div class="story">
+      <h3>NVIDIA (NVDA)</h3>
+      <p>Shares +8.7% after a record $96.22B revenue quarter and a bullish multi-year growth guide.</p>
+      
+      <div class="src"><span class="srcline">Source: <a class="src-link" href="https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-28-133400922.html" target="_blank" rel="noopener">Yahoo Finance</a></span></div>
+    </div>
+    <div class="story">
+      <h3>SALESFORCE (CRM)</h3>
+      <p>Shares +22.6%, its sharpest single-day move in years, on an AI-agent-driven earnings beat.</p>
+      
+      <div class="src"><span class="srcline">Source: <a class="src-link" href="https://www.cnbc.com/2026/08/26/salesforce-crm-q2-earnings-report-2027.html" target="_blank" rel="noopener">CNBC</a></span></div>
+    </div>
+    <div class="story">
+      <h3>BROADCOM (AVGO) &amp; INTEL (INTC)</h3>
+      <p>Both up more than 4% as semiconductor names caught a bid alongside Nvidia's earnings-driven rally.</p>
+      
+      <div class="src"><span class="srcline">Source: <a class="src-link" href="https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-28-133400922.html" target="_blank" rel="noopener">Yahoo Finance</a></span></div>
+    </div></div>
+  </section>
+  <section class="sec watch">
+    <div class="sec-title">WHAT TO WATCH <span class="tag">DEVELOPING, NOT CONFIRMED</span></div>
+    <div class="story-grid">
+    <div class="story">
+      <h3>WILL WARSH'S HAWKISH TONE SURVIVE UNTIL THE NEXT FOMC MEETING?</h3>
+      <p>Warsh's Jackson Hole remarks read as hawkish, but he has not committed to a specific rate decision. Whether "more work to do" translates into an actual hike — or just a longer hold — is still developing, not confirmed.</p>
+      
+      <div class="src"></div>
+    </div>
+    <div class="story">
+      <h3>HOW BOND MARKETS DIGEST A HAWKISH NEW FED CHAIR</h3>
+      <p>Treasury yields have been volatile around Fed commentary this week; watch Monday's open for whether the bond market pushes back on Warsh's inflation warning.</p>
+      
+      <div class="src"></div>
+    </div></div>
+  </section>
+</div>
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="fbrand">THE DAILY — THISWEEK.FIN</div>
+      <div class="disclaimer">Business and finance news, edited daily. Figures verified against primary and wire sources at time of publication; market data is a point-in-time snapshot, not investment advice. Corrections: contact via thisweek.fin.</div>
+    </div>
+    <div><a href="https://claude.ai/code/artifact/f695bee6-2fb9-4e15-aa45-cb03a033cda5">Full Archive &rarr;</a></div>
+  </div>
+</footer>
